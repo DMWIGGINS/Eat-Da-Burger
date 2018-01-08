@@ -8,8 +8,9 @@ var orm = require("../config/orm.js");
 var burger = {
     all: function(cb) {
       orm.selectAll("burgers", function(res) {
-        console.log(res);
         cb(res);
+        console.log("result of burger specific is: " + JSON.stringify(res));
+        
       });
     }
   //   // The variables cols and vals are arrays.
