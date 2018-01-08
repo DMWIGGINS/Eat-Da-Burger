@@ -1,4 +1,4 @@
-var connection = require("./connection.js");
+var connection = require("../config/connection.js");
 
 var orm = {
 
@@ -8,8 +8,9 @@ var orm = {
       if (err) {
         throw err;
       }
-      console.log(result);
+      console.log("result of cb from orm set up is: " + result);
       cb(result);
+      
     });
   },
   // selectAll: function (whatToSelect, cb) {
