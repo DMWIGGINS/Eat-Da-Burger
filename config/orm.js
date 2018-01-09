@@ -10,30 +10,30 @@ var orm = {
       }
       console.log("result of cb from orm set up is: " + result);
       cb(result);
-      
+
     });
   },
-  // selectAll: function (whatToSelect, cb) {
-  //   var queryString = "SELECT * FROM ??";
-  //   connection.query(queryString, [whatToSelect], function (err, result) {
-  //     if (err) {
-  //       throw err;
-  //     }
-  //     console.log(result);
-  //   });
-  // },
-  // insertOne: function (tableInput, colToSearch, valOfCol) {
-  //   var queryString = "SELECT * FROM ?? WHERE ?? = ?";
 
-  //   console.log(queryString);
+  insertOne: function (tableInput, colName, colValue, cb) {
+    var queryString = "INSERT INTO ? (colName)"
+    VALUES("colValue");
 
-  //   connection.query(queryString, [tableInput, colToSearch, valOfCol], function (err, result) {
-  //     console.log(result);
-  //   });
-  // },
-  // updateOne: function () {
+    console.log(queryString);
 
-  // }
+    connection.query(queryString, [tableInput, colName, colValue], function (err, result) {
+      cb(result);
+    });
+  },
+  updateOne: function (tableInput, isSnack, id, cb) {
+    var queryString = "UPDATE ? SET ? WHERE ?";
+    connection.query(queryString, [tableInput, isSnack, id], function (err, result) {
+      if (err) {
+        throw err;
+      }
+      console.log("burger is now in eaten column");
+      cb(result);
+    });
+  },
 
 };
 
