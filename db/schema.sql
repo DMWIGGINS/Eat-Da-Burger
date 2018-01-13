@@ -9,9 +9,9 @@ CREATE TABLE burgers (
 
     id INT NOT NULL AUTO_INCREMENT,
     burger_name varchar
-    (20) NULL,
+    (50) NOT NULL,
     devoured BOOLEAN DEFAULT FALSE,
-    date TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     primary key
     (id)
 );
