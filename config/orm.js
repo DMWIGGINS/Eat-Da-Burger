@@ -48,8 +48,8 @@ var orm = {
     });
   },
 
- 
-  
+
+
   insertOne: function (table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
     // queryString += "(" + cols + ")";
@@ -70,9 +70,15 @@ var orm = {
       cb(result);
     });
   },
-  updateOne: function (table, condition, id, cb) {
-    var queryString = "UPDATE ? SET ? WHERE ?";
-    connection.query(queryString, [table, condition, id], function (err, result) {
+  updateOne: function (table, col, condition, id, cb) {
+    var queryString = "UPDATE" + table;
+    queryString += " SET ";
+    queryString += col;
+    queryString += " WHERE ";
+    queryString += condition;
+
+    console.log(queryString);
+    connection.query(queryString, function (err, result) {
       if (err) {
         throw err;
       }

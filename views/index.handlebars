@@ -5,9 +5,9 @@
 
   <h2>Burgers I Haven't Eaten Yet</h2>
   <ul>
-    {{#each burgers}} {{#if this.devoured}} {{else}}
+    {{#each burgers}} {{#if devoured}} {{else}}
     <p>{{this.id}} {{this.burger_name}}
-      <button class="eatBurger" data-id="{{this.id}}">
+      <button class="eatBurger" data-id="{{id}}" data-newmeal="{{devoured}}">
         Devour It!
       </button>
     </p> {{/if}} {{/each}}

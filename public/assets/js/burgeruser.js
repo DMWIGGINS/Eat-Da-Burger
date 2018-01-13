@@ -1,10 +1,12 @@
 $(function () {
     $(".create-form").on("submit", function (event) {
-        console.log("hi mom")
+        console.log("it clicked");
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
+        var formatName = $("#yum").val().trim();
+        var name = formatName.toUpperCase();
         var newBurger = {
-            name: $("#yum").val().trim()
+            name: name
         };
 
         // Send the POST request.
@@ -20,16 +22,18 @@ $(function () {
         );
 
         $(".eatBurger").on("click", function (event) {
-            var id = $(this).data("id");
             alert("clicked");
-            var condition = {
-                devoured: true,
+            var id = $(this).data("id");
+            var newMeal = $(this).data("newmeal");
+
+            var newMealState = {
+                devoured: newMeal
             };
 
             // Send the PUT request.
             $.ajax("/api/burgers/" + id, {
                 type: "PUT",
-                data: condition
+                data: newMealState
             }).then(
                 function () {
                     console.log("You Ate It!");
