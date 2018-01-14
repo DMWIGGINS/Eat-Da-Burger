@@ -21,7 +21,7 @@ router.get("/", function (req, res) {
 });
 
 router.post("/api/burgers", function (req, res) {
-  console.log("hi mom");
+  
   burger.insertOne(["burger_name"], [req.body.name], function (result) {
     res.json({
       id: result.insertId
@@ -30,6 +30,7 @@ router.post("/api/burgers", function (req, res) {
 });
 
 router.put("/api/burgers/:id", function (req, res) {
+  console.log("")
   var condition = "id = " + req.params.id;
 
   console.log("condition", condition);
@@ -43,7 +44,6 @@ router.put("/api/burgers/:id", function (req, res) {
       res.status(200).end();
     }
   });
-
 });
 
 module.exports = router;

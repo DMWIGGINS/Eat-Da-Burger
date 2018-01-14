@@ -7,7 +7,7 @@
   <ul>
     {{#each burgers}} {{#if devoured}} {{else}}
     <p>{{this.id}} {{this.burger_name}}
-      <button class="eatBurger" data-id="{{id}}" data-newmeal="{{devoured}}">
+      <button class="eatBurger" data-id="{{this.id}}" data-newmeal="{{devoured}}">
         Devour It!
       </button>
     </p> {{/if}} {{/each}}

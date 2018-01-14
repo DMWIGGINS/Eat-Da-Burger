@@ -70,10 +70,10 @@ var orm = {
       cb(result);
     });
   },
-  updateOne: function (table, col, condition, id, cb) {
+  updateOne: function (table, obfColVals, condition, cb) {
     var queryString = "UPDATE" + table;
     queryString += " SET ";
-    queryString += col;
+    queryString += objToSql(objColVals);
     queryString += " WHERE ";
     queryString += condition;
 

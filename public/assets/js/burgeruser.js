@@ -22,7 +22,7 @@ $(function () {
         );
 
         $(".eatBurger").on("click", function (event) {
-            alert("clicked");
+            console.log("clicked");
             var id = $(this).data("id");
             var newMeal = $(this).data("newmeal");
 
