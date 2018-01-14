@@ -19,8 +19,8 @@ var burger = {
       });
     },
 
-      updateOne: function (col, condition, cb) {
-        orm.updateOne("burgers", col, condition, function (res) {
+      updateOne: function (objColVals, condition, cb) {
+        orm.updateOne("burgers", objColVals, condition, function (res) {
           cb(res);
           console.log(JSON.stringify(res));
         });
@@ -28,3 +28,4 @@ var burger = {
     };
 
     module.exports = burger;
+    
